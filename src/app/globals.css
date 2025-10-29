@@ -24,3 +24,10 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+header{
+  @apply bg-red-500
+}
+.main-body{
+  @apply bg-red-400
+}
