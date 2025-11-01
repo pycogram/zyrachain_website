@@ -10,7 +10,6 @@ import teamPic1 from "../../public/pic/team-pic-1.png";
 import supportLogoPi from "../../public/pic/pi-network-logo.png";
 import supportLogoProvena from "../../public/pic/provena-logo.png";
 import zLogoCustom from "../../public/pic/z-logo-custom.png";
-import zLogoMain from "../../public/pic/z-logo-main.png";
 import xl from "../../public/pic/uil-tumblr-square.png";
 import tl from "../../public/pic/uil-telegram.png";
 import ll from "../../public/pic/uil-linkedin.png";
