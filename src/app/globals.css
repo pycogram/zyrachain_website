@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  /* --background: #ffffff; */
+  --background: #0a0a0a;
   --foreground: #171717;
 }
 
@@ -18,16 +19,357 @@
     --foreground: #ededed;
   }
 }
+img,
+span,
+button {
+  display: block;
+  cursor: pointer;
+}
+
+input,
+button,
+textarea {
+  font: inherit;
+}
+
+html {
+  height: 100%;
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: 4px;
+}
+html::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+html::-webkit-scrollbar-thumb {
+  background: #888;
+}
+html::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  @apply block 
+}
+button{
+  @apply bg-orange-400 px-4 py-0.5 rounded-md border border-white cursor-pointer h-8 text-center
+  hover:bg-orange-300 hover:border-gray-100 transition delay-300 ease-in-out shadow-md shadow-neutral-900
+  lg:h-10 lg:px-6 
+}
+/* bg-neutral-600 */
+button p{
+  @apply text-center text-white font-bold 
 }
 
-header{
-  @apply bg-red-500
+h1{
+  @apply text-3xl md:text-4xl lg:text-5xl font-bold
 }
+h2{
+  @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-center
+  text-gray-100 capitalize relative w-fit
+}
+h2::before,
+h2::after{
+  content: "~";
+  @apply absolute 
+}
+h2::before{
+  @apply -left-[1.5rem] sm:-left-[2rem] md:-left-[4rem]
+}
+h2::after{
+  @apply -right-[1.5rem] sm:-right-[2rem] md:-right-[4rem]
+}
+h3{
+  @apply text-2xl md:text-3xl lg:text-4xl font-bold
+}
+h4{
+  @apply text-[12px] sm:text-lg md:text-xl lg:text-2xl text-gray-100 capitalize
+}
+h5{
+  @apply text-[15px] md:text-[18px] w-fit
+}
+h6{
+  @apply text-[12px] md:text-[15px] w-fit
+}
+
+p{
+  @apply text-sm md:text-lg lg:text-xl w-fit
+}
+
+/* Header -> Navbar */
+.header-head{
+  background: #0a0a0a;
+  border-color: #0a0a0a;
+  @apply place-items-center place-content-center fixed top-0 w-[100%] place-self-center 
+  z-10 h-28 md:h-35 lg:h-38 border-0 
+}
+.header-head nav{
+  background-image: url('../../public/pic/asfalt-dark.png');
+  background-repeat: no-repeat; background-position: center; background-size: cover;
+  @apply bg-gray-100 flex place-items-center place-content-between px-6 
+  md:px-4 md:place-content-evenly h-15 md:h-18 lg:h-20 w-[90%] sm:w-[85%] place-self-center rounded-lg
+}
+.header-head nav div .img{
+  @apply h-8 md:h-10 w-fit cursor-pointer hover:scale-95 transition delay-300 ease-in-out
+}
+.header-head nav span{
+  @apply bg-white h-6 w-1 md:h-8 md:w-1.5 lg:h-10 lg:w-2 rounded-t-lg rounded-b-lg mx-4
+}
+.header-head nav span:nth-of-type(1),
+.header-head nav span:nth-of-type(2){
+  @apply hidden md:block
+}
+.header-head nav div:nth-child(3){
+  @apply hidden sm:flex place-content-end md:place-content-between md:w-100 lg:w-150    
+}
+.header-head nav div:nth-child(3) ul{
+  @apply flex gap-x-4
+}
+.header-head nav div ul:nth-child(1){
+  @apply sm:hidden md:flex gap-x-1 lg:gap-x-4
+}
+.header-head nav div ul:nth-child(1) li{
+  @apply place-items-center place-content-center w-14 
+}
+.header-head nav div ul:nth-child(1) li p{
+  @apply font-medium cursor-pointer hover:font-bold hover:text-orange-500 
+}
+.header-head nav div ul:nth-child(2){
+  @apply hidden md:flex
+}
+.header-head nav div ul:nth-child(2) li{
+  @apply bg-gray-200 rounded-md p-1 place-items-center h-fit cursor-pointer
+}
+.header-head nav div ul:nth-child(2) li .icon-x{
+  @apply w-6 h-6 lg:w-8 lg:h-8 hover:scale-90
+}
+.header-head nav div ul:nth-child(2) li .icon-x-discord{
+  @apply w-8 lg:w-10 
+}
+.header-head nav div:nth-child(5) button{
+  @apply hidden md:block
+}
+.header-head nav div:nth-child(5) div{
+  @apply block md:hidden
+}
+.header-head nav div:nth-child(5) div p{
+  @apply h-1 w-6 rounded-lg relative
+}
+.inactive-menu{
+  @apply bg-neutral-900
+}
+.active-menu{
+  @apply bg-transparent
+}
+.header-head nav div:nth-child(5) div p::before{
+  content: "";
+  @apply bg-neutral-900 rounded-lg absolute h-1 w-5  
+}
+.inactive-menu::before{
+  @apply bg-neutral-900 left-0.5 top-2
+}
+.active-menu::before{
+  @apply bg-transparent rotate-45 top-0
+}
+.header-head nav div:nth-child(5) div p::after{
+  content: "";
+  @apply bg-neutral-900 rounded-lg absolute h-1 w-5  
+}
+.inactive-menu::after{
+  @apply bg-neutral-900 left-0.5 bottom-2
+}
+.active-menu::after{
+  @apply bg-transparent -rotate-45 bottom-0
+}
+.header-head .menu-option-open{
+  @apply bg-transparent w-[100%] top-[6rem] h-[85vh] py-4  
+  absolute place-items-end pr-[1.5rem] sm:pr-[3rem]
+  md:hidden 
+}
+.header-head .menu-option-close{
+  @apply hidden
+}
+.header-head .menu-option-open ul{
+  @apply bg-black z-10 h-25 sm:h-40 w-45 sm:w-70 rounded-2xl pl-[1.5rem] 
+  sm:pl-[2rem] block place-content-center border border-gray-50 
+}
+.header-head .menu-option-open ul li{
+  @apply cursor-pointer pl-0 sm:pl-2 hover:scale-95
+}
+.header-head .menu-option-open ul li p{
+  @apply text-sm sm:text-lg my-1 text-gray-50
+}
+
+/* Main  -> Contents*/
 .main-body{
-  @apply bg-red-400
+  @apply place-items-center my-[6.5rem] md:my-[9rem] lg:my-[10rem]
+}
+.main-body section{
+  @apply py-[1rem] md:py-0 w-[95%] sm:w-[90%] place-self-center block space-y-[5rem] lg:space-y-[10rem]
+}
+.main-body section div:nth-child(1){
+  background-image: url('../../public/pic/bg-image-box-1.png');
+  background-repeat: no-repeat; background-position: center; background-size: cover;
+  @apply h-120 w-[95%] place-self-center place-content-between relative rounded-4xl overflow-hidden
+}
+.main-body section div:nth-child(1) div{
+  background-image: url('../../public/pic/asfalt-dark.png');
+  background-repeat: no-repeat; background-position: center; background-size: cover;
+  @apply bg-white sm:w-[100%] md:w-100 h-fit px-2 py-4 border-4 border-gray-200
+}
+.main-body section div:nth-child(1) div:nth-child(1){
+  @apply place-self-start text-center place-items-center place-content-center w-full 
+  md:w-100 capitalize rounded-none md:rounded-br-4xl lg:h-55
+}
+.main-body section div:nth-child(1) div:nth-child(1) h1{
+  @apply lg:leading-[3.5rem]
+}
+.main-body section div:nth-child(1) div:nth-child(2){
+  @apply place-self-end-safe absolute bottom-0 block space-y-5 md:rounded-tl-4xl pl-5 
+  font-semibold text-neutral-800 
+}
+.main-body section div:nth-child(1) div:nth-child(2) h4{
+  @apply text-neutral-900 text-start
+}
+.main-body section div:nth-child(1) div:nth-child(2) button{
+  @apply float-end mr-4 -mt-2 lg:-mt-4
+}
+
+.main-body section div:nth-of-type(2){
+  @apply md:px-4 block place-items-center space-y-[1.5rem] lg:space-y-[3rem] 
+}
+.main-body section div:nth-of-type(2) h2{
+  @apply text-center 
+}
+.main-body section div:nth-of-type(2) h4{
+  @apply text-center 
+}
+
+.main-body section div:nth-of-type(3){
+  @apply place-items-center space-y-[2rem] lg:space-y-[5rem]
+}
+.main-body section div:nth-of-type(3) div{
+  @apply grid grid-cols-1 sm:grid-cols-2 w-full gap-y-2 sm:gap-y-8 lg:w-[90%] lg:flex lg:flex-wrap 
+  md:gap-x-4 md:gap-y-4 lg:gap-x-6 lg:gap-y-10 place-self-center place-items-center 
+  /* @apply  grid md:grid-cols-3 gap-4 bg-red-300 w-full place-items-center  */
+}
+.main-body section div:nth-of-type(3) div span{
+  background-image: url('../../public/pic/asfalt-dark.png');
+  background-repeat: no-repeat; background-position: center; background-size: cover;
+  @apply bg-gray-100 w-[100%] sm:w-[90%] h-30 sm:h-40 lg:w-85 md:h-50 rounded-4xl px-4 py-4 border-8 border-gray-200
+  shadow-md shadow-foreground place-content-center place-items-start relative
+  space-y-6 lg:space-y-10
+}
+.main-body section div:nth-of-type(3) div span h3,
+.main-body section div:nth-of-type(3) div span h4{
+  @apply text-neutral-900 h-fit leading-4
+}
+
+.main-body section div:nth-of-type(4){
+  @apply space-y-[2rem] lg:space-y-[5rem] place-items-center
+}
+.main-body section div:nth-of-type(4) .utility-pic{
+  @apply w-280 h-fit place-self-center
+}
+
+.main-body section div:nth-of-type(5){
+  @apply place-items-center
+}
+.main-body section div:nth-of-type(5) p{
+  @apply text-gray-100 text-[15px] lg:text-lg font-light mt-[1rem] mb-3 lg:mt-[3rem] lg:mb-8 leading-5
+}
+.main-body section div:nth-of-type(5) div{
+  @apply grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 
+}
+.main-body section div:nth-of-type(5) div span {
+  @apply bg-black opacity-60 hover:opacity-100 active:opacity-100 transition delay-300 ease-in-out
+  cursor-pointer relative overflow-hidden
+}
+.main-body section div:nth-of-type(5) div span .team-pic{
+  @apply w-40 sm:w-60 md:w-60 h-fit
+}
+.main-body section div:nth-of-type(5) div span article{
+  @apply w-full absolute bottom-0 h-fit py-1 place-content-center pl-4
+  z-10 rounded-b-lg 
+}
+.main-body section div:nth-of-type(5) div span article h6{
+  @apply text-gray-50 
+}
+.main-body section div:nth-of-type(5) div span article h5{
+  @apply text-white leading-4
+}
+
+
+.main-body section div:nth-of-type(6){
+  @apply place-items-center space-y-[2rem] lg:space-y-[3rem] relative
+}
+.main-body section div:nth-of-type(6) div{
+  @apply place-items-center place-content-center flex w-full
+  space-x-1 sm:space-x-4 md:space-x-6 lg:space-x-8
+}
+.main-body section div:nth-of-type(6) div span .support-logo1{
+  @apply size-15 sm:size-25 md:size-30 lg:size-60
+}
+.main-body section div:nth-of-type(6) div span .support-logo2{
+  @apply w-45 h-10 sm:w-65 sm:h-15 md:w-75 md:h-25 lg:w-140 lg:h-30
+}
+.main-body section div:nth-child(6) p{
+  @apply bg-transparent w-6 h-6 absolute -bottom-[4rem] rounded-full 
+}
+.main-body section div:nth-child(6) p::before,
+.main-body section div:nth-child(6) p::after{
+  content: "";
+  @apply bg-white size-3 absolute rounded-full md:size-4 lg:size-5
+}
+.main-body section div:nth-child(6) p::before{
+  @apply -left-[0.5rem] md:-left-[2rem]
+}
+.main-body section div:nth-child(6) p::after{
+  @apply -right-[0.5rem] md:-right-[2rem]
+}
+
+
+/* Footer */
+.footer-foot{
+  background: #0a0a0a;
+  border-color: #0a0a0a;
+  @apply place-items-center place-content-center bottom-0 w-[100%] 
+  place-self-center relative h-fit border-0 block
+}
+.footer-foot div:nth-child(1){
+  @apply w-[90%] place-items-center
+}
+.footer-foot div:nth-child(1) .logo-custom{
+  background-image: url('../../public/pic/asfalt-dark.png');
+  background-repeat: no-repeat; background-position: center; background-size: cover;
+  @apply w-90 lg:w-140 h-fit hover:rotate-45 transition ease-in-out delay-300
+}
+.footer-foot div:nth-child(2){
+  @apply w-full block relative place-items-center place-content-center
+  py-[2rem] 
+}
+.footer-foot div:nth-child(2) .social-logo-box{
+  @apply place-items-start place-content-center flex gap-x-2 sm:gap-x-4
+  flex-wrap sm:w-[90%] h-fit
+}
+.footer-foot div:nth-child(2) .social-logo-box span{
+  @apply  border-2 md:border-4 border-gray-100 p-1 md:p-2 rounded-md 
+  hover:border-gray-300 hover:scale-95
+}
+.footer-foot div:nth-child(2) .social-logo-box span .social-logo-1{
+  @apply size-6 lg:size-10
+}
+.footer-foot div:nth-child(2) h6{
+  background-image: url('../../public/pic/asfalt-dark.png');
+  background-repeat: no-repeat; background-position: center; background-size: cover;
+  @apply w-[90%] h-0.5 md:h-1 lg:h-2 bg-gray-50 rounded-lg mt-[1.5rem] mb-[2rem]
+}
+.footer-foot div:nth-child(2) p{
+  @apply text-[12px] sm:text-[15px] md:text-lg text-center uppercase text-gray-100
 }
