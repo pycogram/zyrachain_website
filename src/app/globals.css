@@ -105,14 +105,13 @@ p{
 /* Header -> Navbar */
 .header-head{
   background: #0a0a0a;
-  border-color: #0a0a0a;
   @apply place-items-center place-content-center fixed top-0 w-[100%] place-self-center 
-  z-20 h-28 md:h-35 lg:h-38 border-0 
+  z-20 h-28 md:h-35 lg:h-38
 }
 .header-head nav{
   background-image: url('../../public/pic/asfalt-dark.png');
   background-repeat: no-repeat; background-position: center; background-size: cover;
-  @apply bg-gray-100 flex place-items-center place-content-between px-6 border-4 border-neutral-800
+  @apply bg-gray-100 flex place-items-center place-content-between px-6 border-2 border-neutral-800 lg:border-0
   md:px-4 md:place-content-evenly h-15 md:h-18 lg:h-20 w-[90%] sm:w-[85%] place-self-center rounded-lg
 }
 .header-head nav div .img{
@@ -217,7 +216,7 @@ p{
   background-image: url('../../public/pic/bg-image-box-1.png');
   background-repeat: no-repeat; background-position: center; background-size: cover;
   @apply h-120 w-full place-self-center place-content-between relative rounded-4xl overflow-hidden
-  border-4 border-neutral-800
+  border-2 border-neutral-800 md:border-0
 }
 .main-body section div:nth-child(1) div{
   background-image: url('../../public/pic/asfalt-dark.png');
@@ -232,14 +231,14 @@ p{
   @apply lg:leading-[3.5rem]
 }
 .main-body section div:nth-child(1) div:nth-child(2){
-  @apply place-self-end-safe absolute bottom-0 block space-y-5 md:rounded-tl-4xl px-2 pb-3 md:pb-0 md:px-0 md:pl-5 
+  @apply place-self-end-safe absolute bottom-0 block space-y-5 md:rounded-tl-4xl px-2 pb-3 md:pb-4 md:px-0 md:pl-5 
   font-semibold text-neutral-800 
 }
 .main-body section div:nth-child(1) div:nth-child(2) h4{
   @apply text-neutral-900 text-start 
 }
 .main-body section div:nth-child(1) div:nth-child(2) button{
-  @apply float-end mr-4 -mt-5 md:-mt-2 lg:-mt-4
+  @apply float-end mr-4 -mt-5 md:-mt-2 lg:-mt-[2rem]
 }
 
 .main-body section div:nth-of-type(2){
@@ -263,7 +262,7 @@ p{
   background-image: url('../../public/pic/asfalt-dark.png');
   background-repeat: no-repeat; background-position: center; background-size: cover;
   @apply bg-gray-100 w-[100%] sm:w-[90%] h-30 sm:h-40 lg:w-80 md:h-50 rounded-4xl px-4 py-4 border-8 border-gray-200
-  shadow-md shadow-foreground place-content-center place-items-start relative
+  shadow-md shadow-foreground place-content-center place-items-start relative hover:border-neutral-600
   space-y-6 lg:space-y-10
 }
 .main-body section div:nth-of-type(3) div span h3,
@@ -289,10 +288,10 @@ p{
 }
 .main-body section div:nth-of-type(5) div span {
   @apply bg-black opacity-60 hover:opacity-100 active:opacity-100 transition delay-300 ease-in-out
-  cursor-pointer relative overflow-hidden
+  cursor-pointer relative overflow-hidden border-4 border-neutral-800 rounded-3xl
 }
 .main-body section div:nth-of-type(5) div span .team-pic{
-  @apply w-40 sm:w-60 md:w-60 h-fit
+  @apply w-full h-fit
 }
 .main-body section div:nth-of-type(5) div span article{
   @apply w-full absolute bottom-0 h-fit py-1 place-content-center pl-4
