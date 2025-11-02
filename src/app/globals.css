@@ -217,11 +217,12 @@ p{
   background-image: url('../../public/pic/bg-image-box-1.png');
   background-repeat: no-repeat; background-position: center; background-size: cover;
   @apply h-120 md:w-full place-self-center place-content-between relative rounded-4xl overflow-hidden
+  border-4 border-neutral-800
 }
 .main-body section div:nth-child(1) div{
   background-image: url('../../public/pic/asfalt-dark.png');
   background-repeat: no-repeat; background-position: center; background-size: cover;
-  @apply bg-white sm:w-[100%] md:w-100 h-fit px-2 py-0.5 md:py-4 border-2 md:border-4 border-gray-200
+  @apply bg-white sm:w-[100%] md:w-100 h-fit px-2 py-2 md:py-4 border-2 md:border-4 border-gray-200
 }
 .main-body section div:nth-child(1) div:nth-child(1){
   @apply place-self-start text-center place-items-center place-content-center w-full 
@@ -231,7 +232,7 @@ p{
   @apply lg:leading-[3.5rem]
 }
 .main-body section div:nth-child(1) div:nth-child(2){
-  @apply place-self-end-safe absolute bottom-0 block space-y-5 md:rounded-tl-4xl px-1 pb-3 md:pb-0 md:px-0 md:pl-5 
+  @apply place-self-end-safe absolute bottom-0 block space-y-5 md:rounded-tl-4xl px-2 pb-3 md:pb-0 md:px-0 md:pl-5 
   font-semibold text-neutral-800 
 }
 .main-body section div:nth-child(1) div:nth-child(2) h4{
