@@ -248,7 +248,7 @@ p{
   @apply text-center 
 }
 .main-body section div:nth-of-type(2) h4{
-  @apply text-center 
+  @apply text-center text-gray-100
 }
 
 .main-body section div:nth-of-type(3){
@@ -284,17 +284,17 @@ p{
   @apply text-gray-100 text-[15px] lg:text-lg font-light mt-[1rem] mb-3 lg:mt-[3rem] lg:mb-8 leading-5
 }
 .main-body section div:nth-of-type(5) div{
-  @apply grid grid-cols-2 lg:flex w-[100%] md:grid-cols-4 gap-1.5 sm:gap-3 md:gap-6 
+  @apply grid grid-cols-2 w-[100%] lg:grid-cols-4 gap-1.5 sm:gap-3 md:gap-6 
 }
 .main-body section div:nth-of-type(5) div span {
-  @apply bg-black opacity-60 hover:opacity-100 active:opacity-100 transition delay-300 ease-in-out
+  @apply grayscale-100 opacity-90 hover:grayscale-0 active:grayscale-0 transition delay-300 ease-in-out
   cursor-pointer relative overflow-hidden border-4 border-neutral-800 rounded-3xl
 }
 .main-body section div:nth-of-type(5) div span .team-pic{
-  @apply w-full h-fit
+  @apply w-full h-fit 
 }
 .main-body section div:nth-of-type(5) div span article{
-  @apply w-full absolute bottom-0 h-fit py-1 place-content-center pl-4
+  @apply w-full absolute bottom-0 h-fit pb-1.5 lg:pb-4 place-content-center pl-4
   z-10 rounded-b-lg 
 }
 .main-body section div:nth-of-type(5) div span article h6{
