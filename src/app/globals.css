@@ -228,7 +228,7 @@ p{
   md:w-100 capitalize rounded-none md:rounded-br-4xl lg:h-55
 }
 .main-body section div:nth-child(1) div:nth-child(1) h1{
-  @apply lg:leading-[3.5rem]
+  @apply lg:leading-[3.5rem] sm:py-2 md:py-1
 }
 .main-body section div:nth-child(1) div:nth-child(2){
   @apply place-self-end-safe absolute bottom-0 block space-y-5 md:rounded-tl-4xl px-2 pb-5 md:pb-4 md:px-0 md:pl-5 
