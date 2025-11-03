@@ -186,17 +186,23 @@ p{
 .active-menu::after{
   @apply bg-transparent -rotate-45 bottom-0
 }
-.header-head .menu-option-open{
-  @apply bg-transparent w-[100%] top-[6rem] h-[85vh] py-4  
+.header-head .overlay-open{
+  @apply bg-neutral-900 opacity-90 w-[100%] top-[6rem] h-[100vh] py-4  
   absolute place-items-end pr-[1.5rem] sm:pr-[3rem]
   md:hidden 
+}
+.header-head .overlay-close{
+  @apply hidden
+}
+.header-head .menu-option-open{
+  @apply bg-black block absolute right-[1.5rem] sm:right-[3rem] top-[6rem] z-10 h-25 sm:h-40 w-45 sm:w-70 rounded-2xl pl-[1.5rem] 
+  sm:pl-[2rem] place-content-center border border-gray-50 
 }
 .header-head .menu-option-close{
   @apply hidden
 }
 .header-head .menu-option-open ul{
-  @apply bg-black z-10 h-25 sm:h-40 w-45 sm:w-70 rounded-2xl pl-[1.5rem] 
-  sm:pl-[2rem] block place-content-center border border-gray-50 
+  @apply bg-transparent
 }
 .header-head .menu-option-open ul li{
   @apply cursor-pointer pl-0 sm:pl-2 hover:scale-95
@@ -332,7 +338,6 @@ p{
 .main-body section div:nth-child(6) p::after{
   @apply -right-[0.5rem] md:-right-[2rem]
 }
-
 
 /* Footer */
 .footer-foot{

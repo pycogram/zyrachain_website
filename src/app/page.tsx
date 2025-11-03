@@ -20,7 +20,17 @@ import bl from "../../public/pic/uil-book-alt.png";
 
 import { useEffect, useState } from "react";
 
+import { motion } from "framer-motion";
+
 export default function Home() {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  if(isLoading) {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 4 * 1000);
+  }
+
   const currentYear = new Date().getFullYear();
   const [isMenuActive, SetIsMenuActive] =  useState(false);
 
@@ -30,23 +40,56 @@ export default function Home() {
   }
 
   const [isMobile, setIsMobile] = useState<boolean | null>(null);
+
   useEffect(() => {
-      const updateMenuState = () => {
+      const updateMobileStatus = () => {
           if(window.innerWidth <= 500){
               setIsMobile(true) 
           }else{
               setIsMobile(false); 
           };
       };
-      updateMenuState(); // check on load
-      window.addEventListener("resize", updateMenuState);
-      return () => window.removeEventListener("resize", updateMenuState);
+      updateMobileStatus(); // check on load
+      window.addEventListener("resize", updateMobileStatus);
+      return () => window.removeEventListener("resize", updateMobileStatus);
   }, []);
 
+  const [show, setShow] = useState<boolean>(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const controlNavbar = () => {
+    if(window.scrollY > lastScrollY && window.scrollY > 50) {
+      SetIsMenuActive(false);
+      setShow(false); 
+    } else {
+      setShow(true);
+    }
+    setLastScrollY(window.scrollY);
+  }
+  useEffect(() => {
+    window.addEventListener("scroll", controlNavbar);
+    return () => window.removeEventListener("scroll", controlNavbar);
+  }, [lastScrollY]);
+
   return (
+    isLoading ?
     <>
-      <header className="header-head">
-        <nav>
+      <motion.div 
+        initial={{ scale: 0 }} 
+        animate={{ scale: 1 }} 
+        className={"w-[100%] h-[100vh] place-content-center place-items-center relative"}>
+        <Image className={"size-30 md:size-50 lg:size-80 animate-bounce ease-in-out transition"} src={zLogoCustom} alt="zyrachain" loading="lazy"/>
+      </motion.div>
+    </> :
+    <>
+      <motion.header 
+        initial={{ y: 0 }}
+        animate={{ y: show ? 0 : "-1000%" }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+        className="header-head">
+        <motion.nav
+          initial={{ scale: 0 }} animate={{ scale: 1 }}
+        >
           <div>
             <Image className={"img"} src={logo1} alt="logo-text" loading="lazy" />
           </div>
@@ -71,37 +114,66 @@ export default function Home() {
           </div>
           <span></span>
           <div>
-            <button>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
               <p>Start</p>
-            </button>
+            </motion.button>
             <div>
-              <p className={isMenuActive ? "active-menu" : "inactive-menu"} onClick={handleMenu}></p>
+              <p onClick={handleMenu} className={isMenuActive ? "active-menu" : "inactive-menu"}></p>
             </div>
           </div>
-        </nav>
-        <div onClick={handleMenu} className={isMenuActive ? "menu-option-open" : "menu-option-close"}>
+        </motion.nav>
+        
+        <div className={isMenuActive ? "menu-option-open" : "menu-option-close" }>
           <ul>
-            <li><p>Docs</p></li>
-            <li><p>News</p></li>
-            <li><p>$Zera</p></li>
+            <li onClick={handleMenu}><p>Docs</p></li>
+            <li onClick={handleMenu}><p>News</p></li>
+            <li onClick={handleMenu}><p>$Zera</p></li>
           </ul>
-        </div>      
-      </header>
+        </div>
+        
+        <div onClick={handleMenu} className={isMenuActive ? "overlay-open" : "overlay-close"}></div>     
+      </motion.header>
       <main className="main-body">
         <section>
-          <div>
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{y: 0, opacity: 1}}
+            transition={{
+              duration: 0.2,
+              delay: 0.2,
+              type: "spring",
+              stiffness: 100
+            }}
+            animate={{ scale: 1 }}
+          >
             <div>
               <h1>The automated chain network on Pi</h1>
             </div>
             <div>
               <h4>Zyrachain is the foundation chain of zyra ecosystem, designed to power and connect all Zyra products.</h4>
-              <button>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <p>Explore</p>
-              </button>
+              </motion.button>
             </div>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{y: 0, opacity: 1}}
+            transition={{
+              duration: 0.2,
+              delay: 0.2,
+              type: "spring",
+              stiffness: 100
+            }}
+            animate={{ scale: 1 }}
+          >
             <h2>Vision and Mission</h2>
             <h4>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, 
@@ -117,9 +189,19 @@ export default function Home() {
               repudiandae obcaecati rem molestiae repellendus eligendi consequuntur aspernatur vitae 
               dolorem delectus. 
             </h4>  
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{y: 0, opacity: 1}}
+            transition={{
+              duration: 0.2,
+              delay: 0.2,
+              type: "spring",
+              stiffness: 100
+            }}
+            animate={{ scale: 1 }}
+          >
             <h2>Eco-system</h2>
             <div>
               <span>
@@ -139,14 +221,32 @@ export default function Home() {
                 <h3>2 million +</h3>
               </span>
             </div>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{y: 0, opacity: 1}}
+            transition={{
+              duration: 0.2,
+              delay: 0.2,
+              type: "spring",
+              stiffness: 100
+            }}
+            animate={{ scale: 1 }}>
             <h2>zyrachain utilities</h2>
             <Image className={"utility-pic"} src={isMobile ? utilityPicMobile : utilityPic} alt="utility-img" loading="lazy" />
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{y: 0, opacity: 1}}
+            transition={{
+              duration: 0.2,
+              delay: 0.2,
+              type: "spring",
+              stiffness: 100
+            }}
+            animate={{ scale: 1 }}>
             <h2>Core team</h2>
             <p>A dedicated team, constantly improving what we have to offer.</p>
             <div>
@@ -193,9 +293,19 @@ export default function Home() {
                 </article>
               </span>
             </div>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{y: 0, opacity: 1}}
+            transition={{
+              duration: 0.2,
+              delay: 0.2,
+              type: "spring",
+              stiffness: 100
+            }}
+            animate={{ scale: 1 }}
+            >
             <h2>supports</h2>
             <div>
               <span>
@@ -206,7 +316,7 @@ export default function Home() {
               </span>
             </div>
             <p></p>
-          </div>
+          </motion.div>
         </section>
       </main>
       <footer className="footer-foot">
