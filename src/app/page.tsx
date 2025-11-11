@@ -126,7 +126,7 @@ export default function Home() {
             <ul>
               <li><p>Docs</p></li>
               <li><p>News</p></li>
-              <li><p>$Zera</p></li>
+              <li><p>$zyra</p></li>
             </ul>
             <ul>
               <li>
@@ -158,7 +158,7 @@ export default function Home() {
           <ul>
             <li onClick={handleMenu}><p>Docs</p></li>
             <li onClick={handleMenu}><p>News</p></li>
-            <li onClick={handleMenu}><p>$Zera</p></li>
+            <li onClick={handleMenu}><p>$Zyra</p></li>
           </ul>
         </div>
         

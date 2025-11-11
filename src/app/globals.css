@@ -195,7 +195,8 @@ p{
   @apply hidden
 }
 .header-head .menu-option-open{
-  @apply bg-black block absolute right-[1.5rem] sm:right-[3rem] top-[6rem] z-10 h-25 sm:h-40 w-45 sm:w-70 rounded-2xl pl-[1.5rem] 
+  @apply bg-black block absolute right-[1.5rem] sm:right-[3rem] top-[6rem] 
+  z-10 h-25 sm:h-40 w-45 sm:w-70 rounded-2xl pl-[1.5rem] 
   sm:pl-[2rem] place-content-center border border-gray-50 
 }
 .header-head .menu-option-close{
@@ -222,7 +223,7 @@ p{
   background-image: url('../../public/pic/asfalt-dark.png');
   background-repeat: no-repeat; background-position: center; background-size: cover;
   @apply h-110 sm:h-150 md:h-120 w-full place-self-center place-content-between relative rounded-4xl overflow-hidden
-  border-0 border-neutral-800 md:border-0 cursor-pointer 
+  border-2 border-neutral-800 md:border-0 cursor-pointer 
 }
 .banner-img div{
   background-image: url('../../public/pic/asfalt-dark.png');
@@ -247,7 +248,7 @@ p{
   font-semibold text-neutral-800 
 }
 .banner-img div:nth-child(3) h4{
-  @apply text-neutral-900 text-start 
+  @apply text-neutral-900 text-start lowercase first-letter:capitalize 
 }
 .banner-img div:nth-child(3) button{
   @apply float-end mr-4 -mt-4 md:-mt-2 
