@@ -20,7 +20,7 @@ import MotionWrapper from "./motion/motion-wrapper";
 
 const Motionimage = motion(Image);
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 import { motion } from "framer-motion";
 const WEBSITE_LOADER_TIME = 2;
@@ -68,7 +68,7 @@ export default function Home() {
   const [show, setShow] = useState<boolean>(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  const controlNavbar = () => {
+  const controlNavbar = useCallback(() => {
     if(window.scrollY > lastScrollY && window.scrollY > 50) {
       SetIsMenuActive(false);
       setShow(false); 
@@ -76,11 +76,12 @@ export default function Home() {
       setShow(true);
     }
     setLastScrollY(window.scrollY);
-  }
+  }, [lastScrollY]);
+
   useEffect(() => {
     window.addEventListener("scroll", controlNavbar);
     return () => window.removeEventListener("scroll", controlNavbar);
-  }, [lastScrollY]);
+  }, [controlNavbar]);
 
   return (
     isLoading ?
