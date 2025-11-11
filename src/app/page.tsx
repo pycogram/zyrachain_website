@@ -5,8 +5,6 @@ import logo1 from "../../public/logo/logo-named.png";
 import twitter from "../../public/logo/Twitter.png";
 import telegram from "../../public/logo/Telegram.png";
 import discord from "../../public/logo/Discord.png";
-import utilityPic from "../../public/pic/utility-pic.png";
-import utilityPicMobile from "../../public/pic/utility-pic-mobile.png";
 import teamPic1 from "../../public/pic/team-pic-1.png";
 import supportLogoPi from "../../public/pic/pi-network-logo.png";
 import supportLogoProvena from "../../public/pic/provena-logo.png";
@@ -17,10 +15,23 @@ import ll from "../../public/pic/uil-linkedin.png";
 import gl from "../../public/pic/uil-github.png";
 import ml from "../../public/pic/uil-medium-m.png";
 import bl from "../../public/pic/uil-book-alt.png";
+import middleImg from "../../public/pic/middle-img1.png";
+import MotionWrapper from "./motion/motion-wrapper";
+
+const Motionimage = motion(Image);
 
 import { useEffect, useState } from "react";
 
 import { motion } from "framer-motion";
+const WEBSITE_LOADER_TIME = 2;
+
+const groupImgMobile: any = [
+  {up_m: require("../../public/pic/zyrawallet-pic.png"), up_d: require("../../public/pic/zyrawallet.png")},
+  {up_m: require("../../public/pic/zyradex-pic.png"), up_d: require("../../public/pic/zyradex.png")},
+  {up_m: require("../../public/pic/zyraswap-pic.png"), up_d: require("../../public/pic/zyraswap.png")},
+  {up_m: require("../../public/pic/zyracoin-pic.png"), up_d: require("../../public/pic/zyracoin.png")},
+  {up_m: require("../../public/pic/zyrauser-pic.png"), up_d: require("../../public/pic/zyrauser.png")}
+];
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -28,7 +39,7 @@ export default function Home() {
   if(isLoading) {
     setTimeout(() => {
       setIsLoading(false);
-    }, 4 * 1000);
+    }, WEBSITE_LOADER_TIME * 1000);
   }
 
   const currentYear = new Date().getFullYear();
@@ -77,8 +88,8 @@ export default function Home() {
       <motion.div 
         initial={{ scale: 0 }} 
         animate={{ scale: 1 }} 
-        className={"w-[100%] h-[100vh] place-content-center place-items-center relative"}>
-        <Image className={"size-30 md:size-50 lg:size-80 animate-bounce ease-in-out transition"} src={zLogoCustom} alt="zyrachain" loading="lazy"/>
+        className={"w-full h-[100vh] place-content-center place-items-center relative"}>
+        <Image className={"size-20 md:size-40 lg:size-60 animate-bounce ease-in-out transition"} src={zLogoCustom} alt="zyrachain" loading="lazy"/>
       </motion.div>
     </> :
     <>
@@ -138,185 +149,163 @@ export default function Home() {
       </motion.header>
       <main className="main-body">
         <section>
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{y: 0, opacity: 1}}
-            transition={{
-              duration: 0.2,
-              delay: 0.2,
-              type: "spring",
-              stiffness: 100
-            }}
-            animate={{ scale: 1 }}
-          >
-            <div>
-              <h1>The automated chain network on Pi</h1>
+          <MotionWrapper>
+            <div className="banner-img">
+              <div>
+                <h1>The automated chain network on Pi</h1>
+              </div>
+              <Image className={"middle-pic"} src={middleImg} alt="middle logo pic 1" />
+              <div>
+                <h4>Zyrachain is the foundation chain of zyra ecosystem, designed to power and connect all Zyra products.</h4>
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <p>Explore</p>
+                </motion.button>
+              </div>
             </div>
-            <div>
-              <h4>Zyrachain is the foundation chain of zyra ecosystem, designed to power and connect all Zyra products.</h4>
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <p>Explore</p>
-              </motion.button>
+          </MotionWrapper>
+
+          <MotionWrapper>
+            <div className="vision-mission">
+              <h2>Vision and Mission</h2>
+              <h4>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, 
+                molestias totam corrupti provident sunt, repudiandae tempora iusto 
+                earum saepe porro ducimus itaque sequi eveniet fugiat quasi iste ut 
+                vitae eaque! Voluptatum soluta nostrum, non distinctio iste ratione impedit? 
+                Explicabo, quas. Tempore blanditiis quae unde rem excepturi totam, ab ipsam aliquid, 
+                libero sint accusantium iste reiciendis placeat! Ab, saepe! Repellat, earum beatae 
+                adipisci ipsa quisquam vel est molestiae dicta inventore tempore nobis repudiandae ab 
+                voluptatum dolor alias pariatur suscipit, debitis asperiores sequi deleniti eius quaerat. 
+                Officia adipisci, qui harum id molestiae eveniet. Explicabo neque saepe dicta consequatur 
+                fugiat fuga, voluptas suscipit vel minus eaque libero voluptates nostrum voluptatem 
+                repudiandae obcaecati rem molestiae repellendus eligendi consequuntur aspernatur vitae 
+                dolorem delectus. 
+              </h4>  
             </div>
-          </motion.div>
+          </MotionWrapper>
 
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{y: 0, opacity: 1}}
-            transition={{
-              duration: 0.2,
-              delay: 0.2,
-              type: "spring",
-              stiffness: 100
-            }}
-            animate={{ scale: 1 }}
-          >
-            <h2>Vision and Mission</h2>
-            <h4>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, 
-              molestias totam corrupti provident sunt, repudiandae tempora iusto 
-              earum saepe porro ducimus itaque sequi eveniet fugiat quasi iste ut 
-              vitae eaque! Voluptatum soluta nostrum, non distinctio iste ratione impedit? 
-              Explicabo, quas. Tempore blanditiis quae unde rem excepturi totam, ab ipsam aliquid, 
-              libero sint accusantium iste reiciendis placeat! Ab, saepe! Repellat, earum beatae 
-              adipisci ipsa quisquam vel est molestiae dicta inventore tempore nobis repudiandae ab 
-              voluptatum dolor alias pariatur suscipit, debitis asperiores sequi deleniti eius quaerat. 
-              Officia adipisci, qui harum id molestiae eveniet. Explicabo neque saepe dicta consequatur 
-              fugiat fuga, voluptas suscipit vel minus eaque libero voluptates nostrum voluptatem 
-              repudiandae obcaecati rem molestiae repellendus eligendi consequuntur aspernatur vitae 
-              dolorem delectus. 
-            </h4>  
-          </motion.div>
-
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{y: 0, opacity: 1}}
-            transition={{
-              duration: 0.2,
-              delay: 0.2,
-              type: "spring",
-              stiffness: 100
-            }}
-            animate={{ scale: 1 }}
-          >
-            <h2>Eco-system</h2>
-            <div>
-              <span>
-                <h4>total user</h4>
-                <h3>100,000 +</h3>
-              </span>
-              <span>
-                <h4>products</h4>
-                <h3>3 +</h3>
-              </span>
-              <span>
-                <h4>market capitalization</h4>
-                <h3>2 billion +</h3>
-              </span>
-              <span>
-                <h4>wallets downloads</h4>
-                <h3>2 million +</h3>
-              </span>
+          <MotionWrapper>
+            <div className="eco-system">
+              <h2>Eco-system</h2>
+              <div>
+                <span>
+                  <h4>total user</h4>
+                  <h3>100,000 +</h3>
+                </span>
+                <span>
+                  <h4>products</h4>
+                  <h3>3 +</h3>
+                </span>
+                <span>
+                  <h4>market capitalization</h4>
+                  <h3>2 billion +</h3>
+                </span>
+                <span>
+                  <h4>wallets downloads</h4>
+                  <h3>2 million +</h3>
+                </span>
+              </div>
             </div>
-          </motion.div>
+          </MotionWrapper>
 
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{y: 0, opacity: 1}}
-            transition={{
-              duration: 0.2,
-              delay: 0.2,
-              type: "spring",
-              stiffness: 100
-            }}
-            animate={{ scale: 1 }}>
-            <h2>zyrachain utilities</h2>
-            <Image className={"utility-pic"} src={isMobile ? utilityPicMobile : utilityPic} alt="utility-img" loading="lazy" />
-          </motion.div>
-
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{y: 0, opacity: 1}}
-            transition={{
-              duration: 0.2,
-              delay: 0.2,
-              type: "spring",
-              stiffness: 100
-            }}
-            animate={{ scale: 1 }}>
-            <h2>Core team</h2>
-            <p>A dedicated team, constantly improving what we have to offer.</p>
-            <div>
-              <span>
-                <Image className={"team-pic"} src={teamPic1} alt="team-pic-1" />
-                <article>
-                  <h6>TM</h6>
-                  <h5>Software Developer</h5>
-                </article>
-              </span>
-              <span>
-                <Image className={"team-pic"} src={teamPic1} alt="team-pic-2" />
-                <article>
-                  <h6>TM</h6>
-                  <h5>Software Developer</h5>
-                </article>
-              </span>
-              <span>
-                <Image className={"team-pic"} src={teamPic1} alt="team-pic-3" />
-                <article>
-                  <h6>TM</h6>
-                  <h5>Software Developer</h5>
-                </article>
-              </span>
-              <span>
-                <Image className={"team-pic"} src={teamPic1} alt="team-pic-4" />
-                <article>
-                  <h6>TM</h6>
-                  <h5>Software Developer</h5>
-                </article>
-              </span>
-              <span>
-                <Image className={"team-pic"} src={teamPic1} alt="team-pic-5" />
-                <article>
-                  <h6>TM</h6>
-                  <h5>Software Developer</h5>
-                </article>
-              </span>
-              <span>
-                <Image className={"team-pic"} src={teamPic1} alt="team-pic-6" />
-                <article>
-                  <h6>TM</h6>
-                  <h5>Software Developer</h5>
-                </article>
-              </span>
+          <MotionWrapper>
+            <div className="utility-part">
+              <h2>zyrachain utilities</h2>
+              <div
+                className="img-container">
+                {
+                  groupImgMobile.map((item : any, index: number) => (
+                    <Motionimage 
+                      key={index} 
+                      className={"utility-pic"} 
+                      src={isMobile ?  item.up_m : item.up_d} 
+                      alt="utility-img" loading="lazy"
+                      initial={{ y: 150, opacity: 0 }}
+                      whileInView={{y: 0, opacity: 1}} 
+                      transition={{
+                        duration: 0.2,
+                        delay: 0.2,
+                        type: "spring",
+                        stiffness: 100
+                      }}
+                      animate={{ scale: 1 }}
+                    />
+                  ))
+                }
+              </div>
+              
+              {/* <Image className={"utility-pic"} src={isMobile ? utilityPicMobile : utilityPic} alt="utility-img" loading="lazy" /> */}
             </div>
-          </motion.div>
+          </MotionWrapper>
 
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{y: 0, opacity: 1}}
-            transition={{
-              duration: 0.2,
-              delay: 0.2,
-              type: "spring",
-              stiffness: 100
-            }}
-            animate={{ scale: 1 }}
-            >
-            <h2>supports</h2>
-            <div>
-              <span>
-                <Image className={"support-logo1"} src={supportLogoPi} alt="pi-network-official-logo" />
-              </span>
-              <span>
-                <Image className={"support-logo2"} src={supportLogoProvena} alt="provena-official-logo" />
-              </span>
+          <MotionWrapper>
+            <div className="core-team">
+              <h2>Core team</h2>
+              <p>A dedicated team, constantly improving what we have to offer.</p>
+              <div>
+                <span>
+                  <Image className={"team-pic"} src={teamPic1} alt="team-pic-1" />
+                  <article>
+                    <h6>TM</h6>
+                    <h5>Software Developer</h5>
+                  </article>
+                </span>
+                <span>
+                  <Image className={"team-pic"} src={teamPic1} alt="team-pic-2" />
+                  <article>
+                    <h6>TM</h6>
+                    <h5>Software Developer</h5>
+                  </article>
+                </span>
+                <span>
+                  <Image className={"team-pic"} src={teamPic1} alt="team-pic-3" />
+                  <article>
+                    <h6>TM</h6>
+                    <h5>Software Developer</h5>
+                  </article>
+                </span>
+                <span>
+                  <Image className={"team-pic"} src={teamPic1} alt="team-pic-4" />
+                  <article>
+                    <h6>TM</h6>
+                    <h5>Software Developer</h5>
+                  </article>
+                </span>
+                <span>
+                  <Image className={"team-pic"} src={teamPic1} alt="team-pic-5" />
+                  <article>
+                    <h6>TM</h6>
+                    <h5>Software Developer</h5>
+                  </article>
+                </span>
+                <span>
+                  <Image className={"team-pic"} src={teamPic1} alt="team-pic-6" />
+                  <article>
+                    <h6>TM</h6>
+                    <h5>Software Developer</h5>
+                  </article>
+                </span>
+              </div>
             </div>
-            <p></p>
-          </motion.div>
+          </MotionWrapper>
+
+          <MotionWrapper>
+            <div className="support">
+              <h2>supports</h2>
+              <div>
+                <span>
+                  <Image className={"support-logo1"} src={supportLogoPi} alt="pi-network-official-logo" />
+                </span>
+                <span>
+                  <Image className={"support-logo2"} src={supportLogoProvena} alt="provena-official-logo" />
+                </span>
+              </div>
+              <p></p>
+            </div>
+          </MotionWrapper>
         </section>
       </main>
       <footer className="footer-foot">
