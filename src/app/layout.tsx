@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/fhttpsont/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -16,7 +16,7 @@ const useLogoX = "/logo/new-zyrachain-logo-1.png";
 
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://zyrachain.org"), 
+  metadataBase: new URL("https://zyrachain-v1.vercel.app"), 
 
   openGraph: {
     title: "Zyrachain",
