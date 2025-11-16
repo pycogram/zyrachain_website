@@ -93,7 +93,7 @@ h4{
   @apply text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] 
 }
 h5{
-  @apply text-[13px] sm:text-[20px] md:text-[22px] lg:text-[20px] text-gray-100
+  @apply text-[13px] sm:text-[20px] md:text-[22px] lg:text-[20px] text-gray-200
 }
 h6{
   @apply text-[14px] sm:text-[18px] md:text-[20px] lg:text-[16px] text-white
@@ -115,7 +115,7 @@ p{
   md:px-4 md:place-content-evenly h-15 md:h-18 lg:h-20 w-[90%] sm:w-[85%] place-self-center rounded-lg 
 }
 .header-head nav div .img{
-  @apply h-8 md:h-10 w-fit cursor-pointer hover:scale-95 transition delay-300 ease-in-out
+  @apply h-8 md:h-10 w-fit md:w-50 lg:w-fit cursor-pointer hover:scale-95 transition delay-300 ease-in-out
 }
 .header-head nav span{
   @apply bg-gray-100 h-6 w-1 md:h-8 md:w-1.5 lg:h-10 lg:w-2 rounded-t-lg rounded-b-lg mx-2 lg:mx-4
@@ -125,16 +125,16 @@ p{
   @apply hidden md:block
 }
 .header-head nav div:nth-child(3){
-  @apply hidden sm:flex place-content-end md:place-content-between md:w-100 lg:w-150    
+  @apply hidden sm:flex place-content-end md:place-content-between md:w-full lg:w-150    
 }
 .header-head nav div:nth-child(3) ul{
   @apply flex gap-x-2 lg:gap-x-4
 }
 .header-head nav div ul:nth-child(1){
-  @apply sm:hidden md:flex gap-x-1 lg:gap-x-4
+  @apply sm:hidden md:flex gap-x-1.5 lg:gap-x-4
 }
 .header-head nav div ul:nth-child(1) li{
-  @apply place-items-center place-content-center w-14 
+  @apply place-items-center place-content-center w-fit lg:w-14 
 }
 .header-head nav div ul:nth-child(1) li p{
   @apply font-medium cursor-pointer hover:font-bold hover:text-orange-500 
@@ -328,11 +328,8 @@ p{
   @apply w-full absolute bottom-0 h-fit pb-2 md:pb-3 lg:pb-4 place-content-center pl-4
   z-10 rounded-b-lg 
 }
-.core-team div span article h6{
-  @apply text-gray-50 
-}
 .core-team div span article h5{
-  @apply text-white leading-4 md:leading-6
+  @apply leading-4 md:leading-6
 }
 
 

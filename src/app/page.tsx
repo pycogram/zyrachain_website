@@ -151,12 +151,9 @@ export default function Home() {
           </div>
           <span></span>
           <div>
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-              <p>WP</p>
-            </motion.button>
+              <button>
+                <p>Whitepaper</p>
+              </button>
             <div>
               <p onClick={handleMenu} className={isMenuActive ? "active-menu" : "inactive-menu"}></p>
             </div>
@@ -187,12 +184,9 @@ export default function Home() {
               <Image className={"middle-pic"} src={middleImg} alt="middle logo pic 1" />
               <div>
                 <h4>Zyrachain is the foundation chain of zyra ecosystem, designed to power and connect all Zyra products.</h4>
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                >
+                <button>
                   <p>Explore</p>
-                </motion.button>
+                </button>
               </div>
             </div>
           </MotionWrapper>
@@ -328,29 +322,29 @@ export default function Home() {
                 <span>
                   <Image className={"team-pic"} src={teamPic1} alt="team-pic-1" />
                   <article>
-                    <h6>TM</h6>
-                    <h5>Software Developer</h5>
+                    <h6>Soleil Rukundo</h6>
+                    <h5>Lead Backend Dev</h5>
                   </article>
                 </span>
                 <span>
                   <Image className={"team-pic"} src={teamPic1} alt="team-pic-2" />
                   <article>
-                    <h6>TM</h6>
-                    <h5>Software Developer</h5>
+                    <h6>Junman</h6>
+                    <h5>Manager & Dev</h5>
                   </article>
                 </span>
                 <span>
                   <Image className={"team-pic"} src={teamPic1} alt="team-pic-3" />
                   <article>
-                    <h6>TM</h6>
-                    <h5>Software Developer</h5>
+                    <h6>Justin Lee</h6>
+                    <h5>Community Manager</h5>
                   </article>
                 </span>
                 <span>
                   <Image className={"team-pic"} src={teamPic1} alt="team-pic-4" />
                   <article>
                     <h6>TM</h6>
-                    <h5>Software Developer</h5>
+                    <h5>Full stack dev</h5>
                   </article>
                 </span>
                 <span>
@@ -363,8 +357,8 @@ export default function Home() {
                 <span>
                   <Image className={"team-pic"} src={teamPic1} alt="team-pic-6" />
                   <article>
-                    <h6>TM</h6>
-                    <h5>Software Developer</h5>
+                    <h6>Nguyen .T.T</h6>
+                    <h5>Marketing Expert</h5>
                   </article>
                 </span>
               </div>
