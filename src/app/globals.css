@@ -58,14 +58,14 @@ body {
   @apply block 
 }
 button{
-  @apply bg-orange-400 px-4 py-1.5 rounded-md border border-white cursor-pointer h-6.5 md:h-8 text-center
+  @apply bg-orange-400 px-4 rounded-md border border-white cursor-pointer h-8 md:h-9 text-center
   hover:bg-orange-300 hover:border-gray-100 transition delay-300 ease-in-out shadow-md shadow-neutral-900
-  lg:h-9 lg:px-4 
+  lg:h-10 lg:px-4 
 }
 /* bg-neutral-600 */
 button p{
-  @apply text-center text-white font-bold
-  text-[20px] sm:text-[20px] md:text-[22px] lg:text-[20px] leading-4
+  @apply text-center text-white font-bold 
+  text-[20px] sm:text-[20px] md:text-[22px] lg:text-[20px] leading-2
 }
 
 h1{
@@ -118,7 +118,7 @@ p{
   @apply h-8 md:h-10 w-fit cursor-pointer hover:scale-95 transition delay-300 ease-in-out
 }
 .header-head nav span{
-  @apply bg-green-200 h-6 w-1 md:h-8 md:w-1.5 lg:h-10 lg:w-2 rounded-t-lg rounded-b-lg mx-2 lg:mx-4
+  @apply bg-gray-100 h-6 w-1 md:h-8 md:w-1.5 lg:h-10 lg:w-2 rounded-t-lg rounded-b-lg mx-2 lg:mx-4
 }
 .header-head nav span:nth-of-type(1),
 .header-head nav span:nth-of-type(2){
@@ -161,7 +161,7 @@ p{
   @apply h-1 w-6 rounded-lg relative
 }
 .inactive-menu{
-  @apply bg-neutral-900
+  @apply bg-neutral-900 
 }
 .active-menu{
   @apply bg-transparent
@@ -222,7 +222,7 @@ p{
 .main-body section .banner-img{
   background-image: url('../../public/pic/asfalt-dark.png');
   background-repeat: no-repeat; background-position: center; background-size: cover;
-  @apply h-110 sm:h-150 md:h-120 w-full place-self-center place-content-between relative rounded-4xl overflow-hidden
+  @apply h-120 sm:h-150 md:h-120 w-full place-self-center place-content-between relative rounded-4xl overflow-hidden
   border-2 border-neutral-800 md:border-0 cursor-pointer 
 }
 .banner-img div{
@@ -251,7 +251,7 @@ p{
   @apply text-neutral-900 text-start lowercase first-letter:capitalize 
 }
 .banner-img div:nth-child(3) button{
-  @apply float-end mr-4 -mt-4 md:-mt-2 
+  @apply float-end mr-4 -mt-2 md:-mt-2 
 }
 
 
@@ -275,17 +275,6 @@ p{
 }
 .vision-mission div article ul li{
   @apply text-[16px] md:text-[18px] lg:text-[25px] text-gray-50 
-}
-
-
-.main-body section .about-zyra{
-  @apply md:px-4 block place-items-center space-y-[1.5rem] lg:space-y-[3rem] 
-}
-.about-zyra h2{
-  @apply text-center 
-} 
-.about-zyra h4{
-  @apply text-center text-gray-100
 }
 
 .main-body section .eco-system{

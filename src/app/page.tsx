@@ -175,8 +175,10 @@ export default function Home() {
         <div onClick={handleMenu} className={isMenuActive ? "overlay-open" : "overlay-close"}></div>     
       </motion.header>
       <main className="main-body">
+        < RandomMover />
+        < RandomMover />
+        
         <section>
-          < RandomMover />
           <MotionWrapper>
             <div className="banner-img">
               <div>
