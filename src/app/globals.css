@@ -58,7 +58,7 @@ body {
   @apply block 
 }
 button{
-  @apply bg-orange-400 px-4 py-0.5 rounded-md border border-white cursor-pointer h-6.5 md:h-8 text-center
+  @apply bg-orange-400 px-4 py-1.5 rounded-md border border-white cursor-pointer h-6.5 md:h-8 text-center
   hover:bg-orange-300 hover:border-gray-100 transition delay-300 ease-in-out shadow-md shadow-neutral-900
   lg:h-9 lg:px-4 
 }
@@ -214,10 +214,10 @@ p{
 
 /* Main  -> Contents*/
 .main-body{
-  @apply place-items-center my-[6.5rem] md:my-[9rem] lg:my-[10rem]
+  @apply place-items-center my-[6.5rem] md:my-[9rem] lg:my-[10rem] relative 
 }
 .main-body section{
-  @apply py-[1rem] md:py-0 w-[90%] sm:w-[85%] place-self-center block space-y-[5rem] lg:space-y-[10rem]
+  @apply py-[1rem] md:py-0 w-[90%] sm:w-[85%] place-self-center block space-y-[5rem] lg:space-y-[10rem] 
 }
 .main-body section .banner-img{
   background-image: url('../../public/pic/asfalt-dark.png');

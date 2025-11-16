@@ -29,13 +29,15 @@ import zyracoin from "../../public/pic/zyracoin.png";
 import zyrauserPic from "../../public/pic/zyrauser-pic.png";
 import zyrauser from "../../public/pic/zyrauser.png";
 
-import { motion } from "framer-motion";
-const Motionimage = motion.create(Image);
+import { motion} from "framer-motion";
+const MotionImage = motion.create(Image);
 
 import { useEffect, useState, useCallback } from "react";
 
 import Link from "next/link";
-const WEBSITE_LOADER_TIME = 2;
+
+import RandomMover from "./components/random-mover";
+const WEBSITE_LOADER_TIME = 0;
 
 type GroupImg = {
   up_m: StaticImageData;
@@ -120,7 +122,7 @@ export default function Home() {
         className="header-head">
         <motion.nav
           initial={{ scale: 0 }} animate={{ scale: 1 }}
-        >
+      >
           <div>
             <Image className={"img"} src={logo1} alt="logo-text" loading="lazy" />
           </div>
@@ -174,6 +176,7 @@ export default function Home() {
       </motion.header>
       <main className="main-body">
         <section>
+          < RandomMover />
           <MotionWrapper>
             <div className="banner-img">
               <div>
@@ -294,7 +297,7 @@ export default function Home() {
                 className="img-container">
                 {
                   groupImgMobile.map((item : GroupImg, index: number) => (
-                    <Motionimage 
+                    <MotionImage 
                       key={index} 
                       className={"utility-pic"} 
                       src={isMobile ?  item.up_m : item.up_d} 

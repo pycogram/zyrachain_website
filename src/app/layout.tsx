@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "Zyrachain",
-    description: "Zyrachain built on Pi",
+    description: "Zyrachain is a Web3 ecosystem powered by Pi, enabling fast, secure, and scalable blockchain interactions for developers and users.",
     images: [
       {
         url: "/pic/banner-fg.png", 
