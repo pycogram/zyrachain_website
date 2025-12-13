@@ -99,7 +99,7 @@ h6{
   @apply text-[14px] sm:text-[18px] md:text-[20px] lg:text-[16px] text-white
 }
 p{
-  @apply text-[16px] md:text-[18px] lg:text-[25px]
+  @apply text-[16px] md:text-[17px] lg:text-[18px] font-medium
 }
 
 /* Header -> Navbar */
@@ -171,7 +171,7 @@ p{
   @apply bg-neutral-900 
 }
 .active-menu{
-  @apply bg-transparent 
+  @apply bg-transparent opacity-0
 }
 .header-head nav div:nth-child(5) div p::before{
   content: "";
@@ -194,15 +194,30 @@ p{
   @apply bg-transparent -rotate-45 bottom-0
 }
 .header-head .overlay-open{
-  @apply bg-neutral-900 opacity-90 w-[100%] top-[6rem] h-[100vh] py-4  
+  @apply bg-neutral-900 opacity-90 w-[100%] top-[0] h-[100vh] py-4  
   absolute place-items-end pr-[1.5rem] sm:pr-[3rem]
   md:hidden 
 }
 .header-head .overlay-close{
   @apply hidden
 }
+.header-head .overly-menu-close-icon{
+  @apply bg-transparent block z-10 absolute right-[3rem] sm:right-[4rem] top-[2.2rem] 
+  place-content-center place-items-center
+}
+.header-head .overly-menu-close-icon::before,
+.header-head .overly-menu-close-icon::after{
+  content: "";
+  @apply bg-white opacity-100 rounded-lg absolute h-1 w-5 place-self-center
+}
+.header-head .overly-menu-close-icon::before{
+  @apply rotate-40
+}
+.header-head .overly-menu-close-icon::after{
+  @apply -rotate-40
+}
 .header-head .menu-option-open{
-  @apply bg-black block absolute right-[1.5rem] sm:right-[3rem] top-[6rem] 
+  @apply bg-black block absolute right-[1.5rem] sm:right-[3rem] top-[4rem] 
   z-10 h-120 py-4 w-60 sm:w-70 rounded-2xl pl-[1.5rem] 
   sm:pl-[2rem] place-content-start border border-gray-50 
 }
@@ -227,11 +242,12 @@ p{
   @apply py-[1rem] md:py-0 w-[90%] sm:w-[85%] place-self-center block space-y-[5rem] lg:space-y-[10rem] 
 }
 .main-body section .lang-mode{
-  @apply bg-neutral-800 w-fit h-fit p-1 block space-y-2 fixed right-2 lg:right-5 -bottom-[4.5rem] lg:-bottom-[8.5rem] z-10
-  rounded-md shadow-xs shadow-white border border-neutral-500 
+  @apply bg-neutral-800 w-fit h-fit p-1 block space-y-2 fixed right-4 lg:right-5 -bottom-[4rem] lg:-bottom-[8.5rem] z-10
+  rounded-md border border-neutral-500 
 }
 .lang-mode svg{
- @apply size-5 md:size-7 cursor-pointer hover:bg-neutral-600 p-0.5 transition ease-in-out delay-200 rounded-md hover:scale-95
+ @apply size-5 md:size-7 cursor-pointer hover:bg-neutral-600 active:bg-neutral-600 
+ p-0.5 transition ease-in-out delay-200 rounded-md hover:scale-95
 }
 .main-body section .banner-img{
   background-image: url('../../public/pic/asfalt-dark.png');
