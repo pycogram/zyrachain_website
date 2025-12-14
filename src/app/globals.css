@@ -242,7 +242,7 @@ p{
   @apply py-[1rem] md:py-0 w-[90%] sm:w-[85%] place-self-center block space-y-[5rem] lg:space-y-[10rem] 
 }
 .main-body section .lang-mode{
-  @apply bg-neutral-800 w-fit h-fit p-1 block space-y-2 fixed right-4 lg:right-5 -bottom-[4rem] lg:-bottom-[8.5rem] z-10
+  @apply bg-neutral-800 w-fit h-fit p-1 block space-y-2 fixed right-4 lg:right-5 -bottom-[2rem] lg:-bottom-[8.5rem] z-10
   rounded-md border border-neutral-500 
 }
 .lang-mode svg{
