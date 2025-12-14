@@ -274,9 +274,11 @@ p{
   @apply flex place-items-center gap-x-2 
 }
 .option-mode-show span p{
-  @apply text-start text-gray-100 first-letter:capitalize
+  @apply text-start text-gray-100 first-letter:capitalize font-light
 }
-
+.option-mode-show span svg{
+  @apply size-3.5 md:size-5
+}
 
 .lang-mode-option .option-lang-show{
   @apply bg-neutral-800 w-30 h-fit p-1 block py-1.5  
@@ -293,7 +295,7 @@ p{
   @apply block place-items-start gap-x-2 
 }
 .option-lang-show span p{
-  @apply text-start text-gray-100 first-letter:capitalize my-1 px-3 w-[90%] transition ease-in-out delay-200
+  @apply text-start text-gray-100 first-letter:capitalize my-1 px-3 w-[90%] transition ease-in-out delay-200 font-light
   hover:bg-neutral-600 active:bg-neutral-600 border border-transparent hover:border-gray-500 active:border-gray-500 rounded-md
 }
 .option-lang-show .option-lang-selected{
