@@ -60,20 +60,20 @@ body {
 button{
   @apply bg-orange-400 px-2 rounded-md border border-white cursor-pointer h-8 md:h-9 text-center
   hover:bg-orange-300 hover:border-gray-100 transition delay-300 ease-in-out shadow-md shadow-neutral-900
-  lg:h-10 lg:px-4 
+  lg:h-10 lg:px-4 text-gray-100
 }
 /* bg-neutral-600 */
 button p{
-  @apply text-center text-white font-bold 
-  text-[20px] sm:text-[20px] md:text-[20px] lg:text-[20px] leading-2
+  @apply text-center text-gray-100 font-bold 
+  text-[20px] sm:text-[20px] md:text-[20px] lg:text-[20px] leading-2 select-none 
 }
 
 h1{
-  @apply text-[25px] sm:text-[30px] md:text-[40px] lg:text-[50px] font-bold
+  @apply text-[25px] sm:text-[30px] md:text-[40px] lg:text-[50px] font-bold select-none text-gray-100
 }
 h2{
   @apply text-[25px] sm:text-[30px] md:text-[35px] lg:text-[50px] text-gray-100 
-  font-bold capitalize relative 
+  font-bold capitalize relative select-none
 }
 h2::before,
 h2::after{
@@ -87,20 +87,21 @@ h2::after{
   @apply -right-[1.5rem] sm:-right-[2rem] md:-right-[4rem] 
 }
 h3{
-  @apply text-[25px] sm:text-[30px] md:text-[35px] lg:text-[40px] font-bold
+  @apply text-[25px] sm:text-[30px] md:text-[35px] lg:text-[40px] font-bold select-none text-gray-100
 }
 h4{
-  @apply text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] 
+  @apply text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] select-none text-gray-100
 }
 h5{
-  @apply text-[13px] sm:text-[20px] md:text-[22px] lg:text-[20px] text-gray-200
+  @apply text-[13px] sm:text-[20px] md:text-[22px] lg:text-[20px] text-gray-200 select-none
 }
 h6{
-  @apply text-[14px] sm:text-[18px] md:text-[20px] lg:text-[16px] text-white
+  @apply text-[14px] sm:text-[18px] md:text-[20px] lg:text-[16px] text-gray-100 select-none
 }
 p{
-  @apply text-[16px] md:text-[17px] lg:text-[18px] font-medium
+  @apply text-[16px] md:text-[17px] lg:text-[18px] font-medium select-none text-gray-100
 }
+
 
 /* Header -> Navbar */
 .header-head{
@@ -144,7 +145,8 @@ p{
   @apply place-items-center place-content-center w-fit 
 }
 .header-head nav div ul:nth-child(1) li p{
-  @apply font-medium cursor-pointer hover:font-bold hover:text-orange-500 
+  @apply font-bold cursor-pointer hover:font-bold hover:text-orange-500 text-neutral-800 
+  text-[18px] md:text-[20px] lg:text-[22px]
 }
 .header-head nav div ul:nth-child(2){
   @apply hidden md:flex
@@ -165,7 +167,7 @@ p{
   @apply block md:hidden cursor-pointer
 }
 .header-head nav div:nth-child(5) div p{
-  @apply h-1 w-6 rounded-lg relative
+  @apply h-1 w-6 rounded-lg relative  
 }
 .inactive-menu{
   @apply bg-neutral-900 
@@ -195,7 +197,7 @@ p{
 }
 .header-head .overlay-open{
   @apply bg-neutral-900 opacity-90 w-[100%] top-[0] h-[100vh] py-4  
-  absolute place-items-end pr-[1.5rem] sm:pr-[3rem]
+  absolute place-items-end pr-[1.5rem] sm:pr-[3rem] cursor-pointer
   md:hidden 
 }
 .header-head .overlay-close{
@@ -241,14 +243,67 @@ p{
 .main-body section{
   @apply py-[1rem] md:py-0 w-[90%] sm:w-[85%] place-self-center block space-y-[5rem] lg:space-y-[10rem] 
 }
-.main-body section .lang-mode{
-  @apply bg-neutral-800 w-fit h-fit p-1 block space-y-2 fixed right-4 lg:right-5 -bottom-[2rem] lg:-bottom-[8.5rem] z-10
-  rounded-md border border-neutral-500 
+.main-body section .lang-mode-option{
+  @apply h-fit w-fit py-1 fixed right-4 lg:right-5 -bottom-[2rem] lg:-bottom-[8.5rem] z-10 
+  flex flex-row-reverse gap-x-2.5 
 }
-.lang-mode svg{
- @apply size-5 md:size-7 cursor-pointer hover:bg-neutral-600 active:bg-neutral-600 
- p-0.5 transition ease-in-out delay-200 rounded-md hover:scale-95
+ .lang-mode-option .lang-mode{
+  @apply bg-neutral-800 w-fit h-fit p-1 block space-y-2 
+  rounded-md border border-gray-500 place-self-end
 }
+.lang-mode span{
+  @apply cursor-pointer hover:bg-neutral-600 active:bg-neutral-600 
+ p-0.5 transition ease-in-out delay-200 rounded-md hover:scale-95 w-fit h-fit
+} 
+.lang-mode span svg{
+ @apply size-5 md:size-7 
+}
+
+.lang-mode-option .option-mode-show{
+  @apply bg-neutral-800 w-fit h-fit px-1 block mt-1 py-1 pr-4 rounded-md relative border border-gray-500
+  place-self-start shadow-xs shadow-gray-200
+}
+.lang-mode-option .option-mode-hide{
+  @apply hidden pointer-events-none  
+}
+.option-mode-show::after{
+  content: "";
+  @apply w-6 h-2 bg-neutral-700 absolute -right-4 top-2.5 -z-10 rounded-md border border-gray-500
+}
+.option-mode-show span{
+  @apply flex place-items-center gap-x-2 
+}
+.option-mode-show span p{
+  @apply text-start text-gray-100 first-letter:capitalize
+}
+
+
+.lang-mode-option .option-lang-show{
+  @apply bg-neutral-800 w-30 h-fit p-1 block py-1.5  
+  rounded-md relative border border-gray-500 place-self-end shadow-xs shadow-gray-200
+}
+.lang-mode-option .option-lang-hide{
+  @apply hidden pointer-events-none  
+}
+.option-lang-show::after{
+  content: "";
+  @apply w-6 h-2 bg-neutral-700 absolute -right-4 bottom-[0.8rem] -z-10 rounded-md border border-gray-500
+}
+.option-lang-show span{
+  @apply block place-items-start gap-x-2 
+}
+.option-lang-show span p{
+  @apply text-start text-gray-100 first-letter:capitalize my-1 px-3 w-[90%] transition ease-in-out delay-200
+  hover:bg-neutral-600 active:bg-neutral-600 border border-transparent hover:border-gray-500 active:border-gray-500 rounded-md
+}
+.option-lang-show .option-lang-selected{
+  @apply bg-neutral-700 border-gray-400
+}
+.option-lang-show .option-lang-selected-not{
+  @apply bg-transparent border-transparent
+}
+
+
 .main-body section .banner-img{
   background-image: url('../../public/pic/asfalt-dark.png');
   background-repeat: no-repeat; background-position: center; background-size: cover;
@@ -266,7 +321,7 @@ p{
   md:w-100 capitalize rounded-none rounded-br-4xl lg:h-55
 }
 .banner-img div:nth-child(1) h1{
-  @apply lg:leading-[3.5rem] sm:py-2 md:py-1
+  @apply lg:leading-[3.5rem] sm:py-2 md:py-1 text-neutral-800
 }
 .banner-img .middle-pic{
   @apply block absolute -top-[4.8rem] sm:-top-[2.5rem] md:top-0 bottom-0 place-self-center -z-10 
@@ -328,10 +383,14 @@ p{
 }
 
 .main-body section .utility-part{
-  @apply space-y-[2rem] lg:space-y-[5rem] place-items-center
+  @apply space-y-[2rem] lg:space-y-[5rem] place-items-center 
+}
+.utility-part p{
+  @apply text-gray-100 font-light mt-[1rem] mb-3 lg:mt-[3rem] lg:mb-8 leading-5 md:leading-normal w-[100%] place-self-center
+  text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px]
 }
 .utility-part .img-container{
-  @apply block w-[100%] py-2 space-y-0
+  @apply block w-[100%] py-2 space-y-0.5
   /* pl-2 overflow-x-scroll space-x-10 */
 }
 .utility-part .utility-pic{
@@ -342,8 +401,8 @@ p{
   @apply place-items-center  
 }
 .core-team p{
-  @apply text-gray-100 font-light mt-[1rem] mb-3 lg:mt-[3rem] lg:mb-8 leading-5 w-[90%] place-self-center
-  text-[16px] sm:text-[20px] md:text-[25px] lg:text-[30px]
+  @apply text-gray-100 font-light mt-[1rem] mb-3 lg:mt-[3rem] lg:mb-8 leading-5 md:leading-normal w-[100%] place-self-center
+  text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px]
 }
 .core-team div{
   @apply grid grid-cols-2 w-[100%] lg:grid-cols-4 gap-1.5 sm:gap-3 md:gap-6 
@@ -376,13 +435,12 @@ p{
   background-repeat: no-repeat; background-position: center; background-size: cover;
   @apply bg-gray-100 w-[90%] h-20 sm:h-20 lg:w-55 md:h-30 rounded-2xl px-4 py-4 border-4 lg:border-8 border-gray-200 transition 
   shadow-md shadow-foreground place-content-center place-items-start relative hover:border-neutral-300 hover:scale-95 active:scale-105
-  space-y-6 lg:space-y-10
+  space-y-6 lg:space-y-10 
 }
 .explore-sec div span h3,
 .explore-sec div span h4{
-  @apply text-neutral-900 h-fit leading-4
+  @apply text-neutral-900 h-fit leading-4 
 }
-
 
 .main-body section .support{
   @apply place-items-center space-y-[2rem] lg:space-y-[3rem] relative
